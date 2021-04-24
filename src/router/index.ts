@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Home from '../views/Home.vue';
+import Games from '../views/Games.vue';
+import Login from '../views/Login.vue';
+import Contact from '../views/Contact.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -18,13 +21,19 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/games',
     name: 'Games',
-    component: () => import('../views/Games.vue'),
+    component: Games,
   },
   {
     path: '/login',
     name: 'Login',
-    component: () => import('../views/Login.vue'),
+    component: Login,
   },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact,
+  },
+
 ];
 
 const router = createRouter({
