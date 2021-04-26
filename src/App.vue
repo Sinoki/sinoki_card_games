@@ -1,6 +1,7 @@
 <template>
   <Navbar />
   <router-view />
+  <div id="carousel"></div>
 </template>
 
 <script>
@@ -9,7 +10,9 @@ import { defineComponent } from 'vue';
 import Navbar from '@/components/Navbar.vue';
 
 export default defineComponent({
-  components: { Navbar },
+  components: {
+    Navbar,
+  },
 });
 </script>
 
@@ -21,9 +24,11 @@ export default defineComponent({
 }
 
 body {
-  font-family: "Comic Sans MS";
+  font-family: "Ink Free";
   background-color: black;
-  color: silver;
+  text-align: center;
+  font-size: 20px;
+  color: #f9105a;
 }
 
 header {

@@ -54,6 +54,10 @@ export default {
           title: 'Attack on Titan',
           link: '#',
         },
+        {
+          title: 'Hatsune Miku',
+          link: '#',
+        },
       ],
     };
   },
@@ -87,6 +91,7 @@ nav .menu-item {
   border-bottom: 3px solid transparent;
   display: flex;
   transition: 0.4s;
+  margin-top: 5px;
 }
 
 nav .menu-item.active,
