@@ -8,7 +8,6 @@ import { defineComponent } from 'vue';
 import Navbar from '@/components/Navbar.vue';
 import useAuth from './modules/auth';
 import useMe from './modules/me';
-import Games from './views/Games.vue';
 
 export default defineComponent({
   components: { Navbar },

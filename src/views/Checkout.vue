@@ -17,6 +17,7 @@
       </div>
 
       <btn @click="buyHandler">Finalizar compra</btn>
+
     </div>
   </div>
 </template>
@@ -43,7 +44,7 @@ export default defineComponent({
       me.actions.buy().then((res) => {
         console.log('res', res);
         if (res === 'OK') {
-          router.push({ name: 'Home' });
+          router.push({ name: 'Games' });
         }
       });
     };

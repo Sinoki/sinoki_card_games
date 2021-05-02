@@ -23,6 +23,7 @@
     <div>
       Não tem conta? <router-link to="/signup">Cadastre-se aqui</router-link>
     </div>
+    <div class="footer">2021 ♥ Desenvolvimento: Sinoki Card Games ®.</div>
   </div>
 </template>
 
@@ -76,5 +77,17 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .login {
+   font-family: "Comic Sans MS";
+   margin-top: 100px;
+  background: grey;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #444;
+  color: white;
+  text-align: center;
 }
 </style>

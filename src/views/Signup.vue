@@ -128,4 +128,9 @@ export default defineComponent({
 .signup-error {
   color: red;
 }
+.login {
+   font-family: "Comic Sans MS";
+   margin-top: 100px;
+  background: grey;
+}
 </style>

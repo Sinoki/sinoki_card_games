@@ -119,6 +119,7 @@ nav .menu-item {
   display: flex;
   transition: 0.4s;
   margin-top: 5px;
+  font-weight: bold;
 }
 
 nav .menu-item.active,
