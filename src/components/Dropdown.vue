@@ -21,7 +21,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'dropdown',
   props: ['title', 'items'],

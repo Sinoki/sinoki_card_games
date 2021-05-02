@@ -1,17 +1,34 @@
 <template>
   <Navbar />
   <router-view />
-  <div id="carousel"></div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue';
-
 import Navbar from '@/components/Navbar.vue';
+import useAuth from './modules/auth';
+import useMe from './modules/me';
+import Games from './views/Games.vue';
 
 export default defineComponent({
-  components: {
-    Navbar,
+  components: { Navbar },
+
+  setup() {
+    const auth = useAuth();
+    const me = useMe();
+
+    auth.actions.loadUserData();
+
+    if (auth.state.token) {
+      me.actions.getMe().then((res) => {
+        console.log('App.vue', res);
+        if (!res) {
+          auth.actions.logout();
+        }
+      });
+    }
+
+    return {};
   },
 });
 </script>
@@ -28,12 +45,14 @@ body {
   background-color: black;
   text-align: center;
   font-size: 20px;
-  color: #f9105a;
+  color: white;
 }
 
-header {
-  width: 100vw;
-  background-color: #222;
-  padding: 15px;
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 </style>

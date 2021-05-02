@@ -4,27 +4,54 @@
     <div class="menu-item"><router-link to="/">Home</router-link></div>
     <div class="menu-item"><router-link to="/about">About</router-link></div>
     <Dropdown title="Games" :items="games" />
-    <div class="menu-item"><router-link to="/">Login</router-link></div>
     <div class="menu-item">
-      <router-link to="/">Contact</router-link>
+      <span v-if="!isLoggedIn">
+        <router-link to="/login">Login</router-link>
+      </span>
+
+      <span v-else>
+        Bem vindo: <strong>{{ username }}</strong> |
+        <span @click="logoutHandler">Logout</span>
+      </span>
+    </div>
+    <div class="menu-item">
+      <router-link to="/contact">Contact</router-link>
     </div>
   </nav>
 </template>
 
 <script>
+import useAuth from '@/modules/auth';
+import useMe from '@/modules/me';
+import { computed, defineComponent } from 'vue';
 import Dropdown from './Dropdown.vue';
 
-export default {
+export default defineComponent({
   name: 'navbar',
   components: {
     Dropdown,
   },
-  data() {
+  setup() {
+    const auth = useAuth();
+    const me = useMe();
+    const isLoggedIn = computed(() => auth.state.token);
+    const username = computed(() => auth.state.username);
+    const balance = computed(() => me.state.balance);
+    const cartCount = computed(() => me.state.cart.length);
+    const logoutHandler = () => {
+      auth.actions.logout();
+    };
+
     return {
+      isLoggedIn,
+      username,
+      balance,
+      cartCount,
+      logoutHandler,
       games: [
         {
-          title: 'Pokémon',
-          link: '#',
+          title: 'Pokemon',
+          link: 'Games',
         },
         {
           title: 'One Punch man',
@@ -61,7 +88,7 @@ export default {
       ],
     };
   },
-};
+});
 </script>
 
     <style>

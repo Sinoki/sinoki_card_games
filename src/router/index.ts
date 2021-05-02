@@ -3,12 +3,24 @@ import Home from '../views/Home.vue';
 import Games from '../views/Games.vue';
 import Login from '../views/Login.vue';
 import Contact from '../views/Contact.vue';
+import Signup from '../views/Signup.vue';
+import Checkout from '../views/Checkout.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
     component: Home,
+  },
+  {
+    path: '/checkout',
+    name: 'Checkout',
+    component: Checkout,
+  },
+  {
+    path: '/signup',
+    name: 'Signup',
+    component: Signup,
   },
   {
     path: '/about',
