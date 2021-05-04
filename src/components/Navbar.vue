@@ -55,35 +55,35 @@ export default defineComponent({
         },
         {
           title: 'One Punch man',
-          link: '#',
+          link: 'Saitama',
         },
         {
           title: 'Yu Yu Hakusho',
-          link: '#',
+          link: 'Hakusho',
         },
         {
           title: 'Naruto',
-          link: '#',
+          link: 'Naruto',
         },
         {
           title: 'Death Note',
-          link: '#',
+          link: 'DeathNote',
         },
         {
-          title: 'Dragon Ball Z',
-          link: '#',
+          title: 'Dragon Ball',
+          link: 'Dragon',
         },
         {
           title: 'One Piece',
-          link: '#',
+          link: 'OnePiece',
         },
         {
           title: 'Attack on Titan',
-          link: '#',
+          link: 'AttackTitan',
         },
         {
           title: 'Hatsune Miku',
-          link: '#',
+          link: 'Miku',
         },
       ],
     };

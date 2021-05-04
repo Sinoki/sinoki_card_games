@@ -5,11 +5,11 @@ const user: { [key: string]: any } = {
   password: 'asd',
   status: 'Ok',
   token: '',
-  balance: 0,
+  balance: -947,
   cards: [],
 };
 
-const data = window.localStorage.getItem('tpm_marketplace_vue31');
+const data = window.localStorage.getItem('tpm_marketplace_sinoki_card_games');
 if (data) {
   const parseData = JSON.parse(data);
   Object.keys(parseData).forEach((k) => {
@@ -26,7 +26,7 @@ export const Signup = async (name: string, username: string, password: string) =
   user.token = 'superUltraLongToken';
   user.balance = Math.floor(Math.random() * 1000);
 
-  window.localStorage.setItem('tpm_marketplace_vue31', JSON.stringify(user));
+  window.localStorage.setItem('tpm_marketplace_sinoki_card_games', JSON.stringify(user));
 
   return {
     status: 'OK',
@@ -77,7 +77,7 @@ export const buy = async (body: any) => {
     user.balance -= card.price;
   });
 
-  window.localStorage.setItem('tpm_marketplace_vue31', JSON.stringify(user));
+  window.localStorage.setItem('tpm_marketplace_sinoki_card_games', JSON.stringify(user));
 
   return {
     status: 'OK',
@@ -96,7 +96,7 @@ export const sell = async (body: any) => {
 
   user.cards.splice(idx, 1);
 
-  window.localStorage.setItem('tpm_marketplace_vue31', JSON.stringify(user));
+  window.localStorage.setItem('tpm_marketplace_sinoki_card_games', JSON.stringify(user));
 
   return {
     status: 'OK',

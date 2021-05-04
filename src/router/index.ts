@@ -1,6 +1,14 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Home from '../views/Home.vue';
 import Games from '../views/Games.vue';
+import Saitama from '../views/Saitama.vue';
+import Hakusho from '../views/Hakusho.vue';
+import Naruto from '../views/Naruto.vue';
+import DeathNote from '../views/DeathNote.vue';
+import Dragon from '../views/Dragon.vue';
+import OnePiece from '../views/OnePiece.vue';
+import AttackTitan from '../views/AttackTitan.vue';
+import Miku from '../views/Miku.vue';
 import Login from '../views/Login.vue';
 import Contact from '../views/Contact.vue';
 import Signup from '../views/Signup.vue';
@@ -11,6 +19,46 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     name: 'Home',
     component: Home,
+  },
+  {
+    path: '/saitama',
+    name: 'Saitama',
+    component: Saitama,
+  },
+  {
+    path: '/hakusho',
+    name: 'Hakusho',
+    component: Hakusho,
+  },
+  {
+    path: '/naruto',
+    name: 'Naruto',
+    component: Naruto,
+  },
+  {
+    path: '/deathNote',
+    name: 'DeathNote',
+    component: DeathNote,
+  },
+  {
+    path: '/dragon',
+    name: 'Dragon',
+    component: Dragon,
+  },
+  {
+    path: '/onePiece',
+    name: 'OnePiece',
+    component: OnePiece,
+  },
+  {
+    path: '/attackTitan',
+    name: 'AttackTitan',
+    component: AttackTitan,
+  },
+  {
+    path: '/miku',
+    name: 'Miku',
+    component: Miku,
   },
   {
     path: '/checkout',
