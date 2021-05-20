@@ -1,20 +1,16 @@
 <template>
   <div class="naruto">
-    <div class="img">
-      <img src="https://i.ibb.co/wwL1NWv/naruto.jpg">
-   </div>
+    <img src="https://i.ibb.co/wwL1NWv/naruto.jpg" />
   </div>
   <div class="footer">2021 ♥ Desenvolvimento: Sinoki Card Games ®.</div>
 </template>
 
 <style lang="scss" scoped>
-
-.img {
-  margin-top: 50px;
-}
 .naruto {
- width: 700px;
- height: 500px;
+  margin-top: 30px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .footer {
   position: fixed;

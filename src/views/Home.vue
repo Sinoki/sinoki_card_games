@@ -5,7 +5,7 @@
       ao marketplace Sinoki Card Games 🚀
     </div>
 
-    <div ref="car" style="width: 700px"></div>
+    <div ref="car" style="width: 600px"></div>
 
     <div class="footer">2021 ♥ Desenvolvimento: Sinoki Card Games ®.</div>
   </div>

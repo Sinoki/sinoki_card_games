@@ -17,7 +17,6 @@
       </div>
 
       <btn @click="buyHandler">Finalizar compra</btn>
-
     </div>
   </div>
 </template>

@@ -3,14 +3,14 @@
     <img :src="card.sprites.frontDefault" />
 
     <div>{{ card.id }} - {{ card.name }}</div>
+    <div>{{ card.types }}</div>
     <div>
-      Price: R$ <span>{{card.price}}</span>
+      Price: R$ <span>{{ card.price }}</span>
     </div>
 
     <btn v-if="isMine" @click="$emit('on-sell')">Sell</btn>
     <btn v-else-if="!isCart" @click="$emit('on-buy')">Buy</btn>
     <btn v-else @click="$emit('on-remove')">Remove</btn>
-
   </div>
 </template>
 
@@ -25,6 +25,7 @@ export default defineComponent({
     isCart: { type: Boolean, default: false },
     isMine: { type: Boolean, default: false },
   },
+
   setup() {
     return {};
   },

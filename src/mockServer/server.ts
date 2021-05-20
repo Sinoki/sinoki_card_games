@@ -5,7 +5,7 @@ const user: { [key: string]: any } = {
   password: 'asd',
   status: 'Ok',
   token: '',
-  balance: -947,
+  balance: 0,
   cards: [],
 };
 

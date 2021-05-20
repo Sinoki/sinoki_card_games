@@ -1,20 +1,16 @@
 <template>
   <div class="deathNote">
-    <div class="img">
-      <img src="https://i.ibb.co/Cvhp4DR/death-note.png">
-   </div>
+    <img src="https://i.ibb.co/wN6885Z/Death-Note.jpg" />
   </div>
   <div class="footer">2021 ♥ Desenvolvimento: Sinoki Card Games ®.</div>
 </template>
 
 <style lang="scss" scoped>
-
-.img {
-  margin-top: 50px;
-}
 .deathNote {
- width: 700px;
- height: 500px;
+  margin-top: 25px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .footer {
   position: fixed;

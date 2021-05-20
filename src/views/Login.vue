@@ -77,9 +77,15 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .login {
-   font-family: "Comic Sans MS";
-   margin-top: 100px;
+  font-family: "Comic Sans MS";
+  width: 100%;
+  height: 550px;
+  margin-top: 20px;
+  padding: 150px;
   background: grey;
+}
+a {
+  color: white;
 }
 .footer {
   position: fixed;

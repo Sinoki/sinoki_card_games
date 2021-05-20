@@ -1,11 +1,7 @@
 <template>
-  <div class="login">
+  <div class="signup">
     <div>Name</div>
-    <input
-      v-model="name"
-      type="text"
-      @keyup="nameHandler"
-    />
+    <input v-model="name" type="text" @keyup="nameHandler" />
 
     <div>Username</div>
     <input
@@ -84,7 +80,11 @@ export default defineComponent({
         return;
       }
       console.log('vamos fazer o signup', state.username, state.password1);
-      const res = await auth.actions.signup(state.name, state.username, state.password1);
+      const res = await auth.actions.signup(
+        state.name,
+        state.username,
+        state.password1,
+      );
       if (res.status === 'OK') {
         console.log('ok');
       }
@@ -128,9 +128,15 @@ export default defineComponent({
 .signup-error {
   color: red;
 }
-.login {
-   font-family: "Comic Sans MS";
-   margin-top: 100px;
+.signup {
+  font-family: "Comic Sans MS";
+  width: 100%;
+  height: 550px;
+  margin-top: 20px;
+  padding: 120px;
   background: grey;
+}
+a {
+  color: white;
 }
 </style>

@@ -1,6 +1,5 @@
 <template>
   <div class="saitama">
-
     <div ref="car" style="width: 700px"></div>
 
     <div class="footer">2021 ♥ Desenvolvimento: Sinoki Card Games ®.</div>

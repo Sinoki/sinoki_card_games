@@ -1,20 +1,19 @@
 <template>
   <div class="dragon">
-    <div class="img">
-      <img src="https://i.ibb.co/xMfPBMx/dragon.jpg">
-   </div>
+    <img src="https://i.ibb.co/xMfPBMx/dragon.jpg" />
   </div>
+
   <div class="footer">2021 ♥ Desenvolvimento: Sinoki Card Games ®.</div>
 </template>
 
 <style lang="scss" scoped>
-
-.img {
-  margin-top: 50px;
-}
 .dragon {
- width: 700px;
- height: 500px;
+  width: 100%;
+  height: 50%;
+  margin-top: 70px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .footer {
   position: fixed;
