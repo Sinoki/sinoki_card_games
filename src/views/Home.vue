@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   setup() {
@@ -137,7 +137,7 @@ $autoplay-duration: 5;
   user-select: none;
 }
 
-/* Mixins to handle Quick Navigation Button states(Mixins para lidar com os estados do botão de navegação rápida) */
+/* Mixins to handle Quick Navigation Button states*/
 @mixin quickNavBtnActive() {
   background-color: $quick-nav-active-color;
 }
@@ -198,7 +198,7 @@ $autoplay-duration: 5;
       opacity: 0.8;
     }
 
-    /* Set active state to first button on load(Define o estado ativo para o primeiro botão no carregamento) */
+    /* Set active state to first button on load*/
     &:first-child {
       @include quickNavBtnActive();
     }
@@ -340,7 +340,7 @@ $autoplay-duration: 5;
             }
           }
 
-          /* Show last prev button if first slide(Mostrar o último botão anterior do primeiro slide) */
+          /* Show last prev button if first slide*/
           &:first-of-type {
             ~ .fs-prev-nav {
               .fs-prev-btn:last-child {
@@ -349,7 +349,7 @@ $autoplay-duration: 5;
             }
           }
 
-          /* Show first next button if last slide(Mostrar o primeiro botão seguinte do último slide)*/
+          /* Show first next button if last slide*/
           &:last-of-type {
             ~ .fs-next-nav {
               .fs-next-btn:first-child {
@@ -363,7 +363,7 @@ $autoplay-duration: 5;
     }
   }
 
-  /* Display first pair of Prev/Next Buttons on load(Exibir o primeiro par de botões Anterior / Próximo ao carregar) */
+  /* Display first pair of Prev/Next Buttons on load*/
   .fs-prev-btn:last-child {
     display: block;
   }
@@ -377,9 +377,9 @@ $autoplay-duration: 5;
  * ===== AUTOPLAY (Reprodução automática) =====
  *
  * Functions to handle autoplay.(Funções para lidar com a reprodução automática.)
- * If you're not going to use autoplay, set $autoplay to false.(Se você não for 
+ * If you're not going to use autoplay, set $autoplay to false.(Se você não for
  usar a reprodução automática, defina $ autoplay como falso.)
- * This part tends to compile into a lot of uneccesary CSS otherwise.(Esta parte 
+ * This part tends to compile into a lot of uneccesary CSS otherwise.(Esta parte
  tende a compilar em muitos CSS desnecessários de outra forma.)
  */
 @if $autoplay == true {
