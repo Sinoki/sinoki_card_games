@@ -45,7 +45,8 @@ nav .menu-item .sub-menu {
   left: 50%;
   transform: translateX(-50%);
   width: max-content;
-  border-radius: 0px 0px 16px 16px;
+  border-radius: 10px;
+  z-index: 1;
 }
 
 .fade-enter-active,

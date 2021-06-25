@@ -24,7 +24,7 @@ export interface Card {
   pastTypes?: [];
   species?: Record<string, unknown>;
   stats?: [];
-  types: [];
+  types?: [];
   weight?: number;
 }
 interface State {
@@ -56,7 +56,6 @@ const mutations = {
     const newCard: Card = {
       id: card.id,
       name: card.name,
-      types: card.types[0].type.name,
       price: card.price,
       sprites: {
         frontDefault: card.sprites.front_default,
@@ -92,7 +91,7 @@ const actions = {
   async loadCards() {
     mutations.setBusy(true);
 
-    const res = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=25&offset=0');
+    const res = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=5&offset=0');
 
     mutations.setNextUrl(res.data.next);
 

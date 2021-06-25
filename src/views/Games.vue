@@ -1,8 +1,10 @@
 <template>
   <div class="header">Olá, seja bem vindo a super loja de cards Pokemon</div>
+
   <div class="balance">
     Balance: <strong>{{ balance }}</strong>
   </div>
+
   <div class="cart">
     <router-link :to="{ name: 'Checkout' }">
       Cart: <strong>{{ cartCount }}</strong>
@@ -18,48 +20,49 @@
     </div>
   </div>
 
-  <div style="margin-top: 30px">
-    <div>lista dos pokemons</div>
-    <div id="app">
-      <div class="column is-half is-offset-one-quarter">
-        <input
-          type="text"
-          placeholder="Buscar pokemon pelo nome"
-          v-model="busca"
-        />
-        <button class="buscaBtn" @click="buscar">Buscar</button>
+  <div id="app">
+    <div class="column is-half is-offset-one-quarter">
+      <input
+        type="text"
+        placeholder="Buscar pokemon pelo nome"
+        v-model="busca"
+      />
+      <button class="buscaBtn" @click="buscar">Buscar</button>
+      <div style="margin-top: 30px">
+        <div>lista dos pokemons</div>
+        <div class="header-card-container flex flex-wrap">
+          <div v-for="card in list" :key="card.id">
+            <card-component :card="card" @on-buy="buyHandler(card)" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="header-card-container flex flex-wrap">
-    <div v-for="card in list" :key="card.id">
-      <card-component :card="card" @on-buy="buyHandler(card)" />
-    </div>
-  </div>
+<div class="btnCarregar">
   <btn @click="loadMoreHandler">Carregar mais</btn>
+  </div>
 </template>
 
 <script lang="ts">
 import useCards, { Card } from '@/modules/cards';
-import { computed, defineComponent } from 'vue';
+import { ref, computed, defineComponent } from 'vue';
 import Btn from '@/components/atoms/Btn.vue';
 import useMe from '@/modules/me';
 import CardComponent from '@/components/molecules/Card.vue';
-import axios from 'axios';
-import Pokemon from '@/components/Pokemon.vue';
 
 export default defineComponent({
   components: { Btn, CardComponent },
   setup() {
     const cards = useCards();
     const me = useMe();
+    const busca = ref('');
     const balance = computed(() => me.state.balance);
     const cartCount = computed(() => me.state.cart.length);
-    const list = cards.getters.sortedList();
     const myList = me.getters.sortedList();
     const loadMoreHandler = () => {
       cards.actions.loadMore();
     };
+
     const buyHandler = (card: Card) => {
       me.mutations.addCardToCart(card);
     };
@@ -70,7 +73,25 @@ export default defineComponent({
     const searchHandler = (card: Card) => {
       me.mutations.addCardToCart(card);
     };
+
+    // Faz o filtro da lista sempre que digitar no input
+    const list = computed(() => {
+      // Pega a list acompleta ordernada
+      const sortedList = cards.getters.sortedList().value;
+
+      // Se tiver algum valor dentro do busca, faz o filtro
+      if (busca.value) {
+        return sortedList.filter(
+          (p) => p.name.toLowerCase().search(busca.value.toLowerCase()) > -1,
+        );
+      }
+
+      // retorna a lista filtrada
+      return sortedList;
+    });
+
     cards.actions.loadCards();
+
     return {
       list,
       myList,
@@ -80,33 +101,22 @@ export default defineComponent({
       balance,
       cartCount,
       searchHandler,
+      busca,
     };
-  },
-  data() {
-    return {
-      pokemons: [],
-      filteredPokemons: [],
-      busca: '',
-    };
-  },
-  created() {
-    axios
-      .get('https://pokeapi.co/api/v2/pokemon?limit=250&offset=0')
-      .then((res) => {
-        console.log('Pegou a lista de pokemons');
-        this.pokemons = res.data.results;
-        this.filteredPokemons = res.data.results;
-      });
   },
 });
 </script>
 
 <style lang="scss" scoped>
+.btnCarregar {
+  margin-bottom: 50px;
+}
 .header-card-container {
   border: 1px solid yellow;
   display: flex;
   justify-content: center;
-  max-height: 40vh;
+  margin-bottom: 30px;
+  max-height: 50vh;
   overflow-y: auto;
 }
 .balance {

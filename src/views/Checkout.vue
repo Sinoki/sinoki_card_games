@@ -1,11 +1,13 @@
 <template>
   <div>
-    <div class="flex flex-wrap">
+    <div class="header-card-container flex flex-wrap">
+    <div class="flex-flex-wrap">
       <div v-for="card in cart" :key="card.id">
         <card-component :card="card" isCart @on-remove="removeHandler(card)" />
       </div>
 
       <div v-if="!cart.length">Seu carrinho esta vazio</div>
+    </div>
     </div>
 
     <div class="checkout-footer">
@@ -16,7 +18,7 @@
         Total: R$ <strong>{{ total }}</strong>
       </div>
 
-      <btn @click="buyHandler">Finalizar compra</btn>
+      <btn class="btnFinalizarBuy" @click="buyHandler">Finalizar compra</btn>
     </div>
   </div>
 </template>
@@ -58,8 +60,29 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+ .header-card-container {
+  border: 1px solid yellow;
+  display: flex;
+  justify-content: center;
+  max-height: 50vh;
+  overflow-y: auto;
+    align-items: center;
+}
+.flex-flex-wrap {
+    display: flex;
+ justify-content: center;
+  align-items: center;
+  margin-left: 12px;
+  margin-top: 70px;
+}
 .checkout-footer {
-  margin-top: 50px;
-  text-align: left;
+  margin-top: 80px;
+  text-align: center;
+}
+.btnFinalizarBuy {
+  display: flex;
+ justify-content: center;
+  align-items: center;
+  margin-left: 650px;
 }
 </style>

@@ -39,6 +39,6 @@ export default defineComponent({
   margin: 5px;
   padding: 5px;
   width: 200px;
-  height: 200px;
+  height: 250px;
 }
 </style>

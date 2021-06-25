@@ -4,11 +4,14 @@ import Games from '../views/Games.vue';
 import Saitama from '../views/Saitama.vue';
 import Hakusho from '../views/Hakusho.vue';
 import Naruto from '../views/Naruto.vue';
+import ShinChan from '../views/ShinChan.vue';
 import DeathNote from '../views/DeathNote.vue';
 import Dragon from '../views/Dragon.vue';
 import OnePiece from '../views/OnePiece.vue';
 import AttackTitan from '../views/AttackTitan.vue';
+import Chihiro from '../views/Chihiro.vue';
 import Miku from '../views/Miku.vue';
+import Avatar from '../views/Avatar.vue';
 import Login from '../views/Login.vue';
 import Contact from '../views/Contact.vue';
 import Signup from '../views/Signup.vue';
@@ -36,6 +39,11 @@ const routes: Array<RouteRecordRaw> = [
     component: Naruto,
   },
   {
+    path: '/shin-chan',
+    name: 'Shin-chan',
+    component: ShinChan,
+  },
+  {
     path: '/deathNote',
     name: 'DeathNote',
     component: DeathNote,
@@ -56,9 +64,19 @@ const routes: Array<RouteRecordRaw> = [
     component: AttackTitan,
   },
   {
+    path: '/chihiro',
+    name: 'Chihiro',
+    component: Chihiro,
+  },
+  {
     path: '/miku',
     name: 'Miku',
     component: Miku,
+  },
+  {
+    path: '/avatar',
+    name: 'Avatar',
+    component: Avatar,
   },
   {
     path: '/checkout',

@@ -1,8 +1,6 @@
 <template>
   <div class="saitama">
     <div ref="car" style="width: 700px"></div>
-
-    <div class="footer">2021 ♥ Desenvolvimento: Sinoki Card Games ®.</div>
   </div>
 </template>
 
@@ -34,15 +32,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="scss" scoped>
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #444;
-  color: white;
-  text-align: center;
-}
-</style>

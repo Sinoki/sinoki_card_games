@@ -1,6 +1,7 @@
 <template>
   <Navbar />
   <router-view />
+     <div class="footer">2021 ♥ Desenvolvimento: Sinoki Card Games ®.</div>
 </template>
 
 <script lang="ts">
@@ -45,6 +46,16 @@ body {
   text-align: center;
   font-size: 20px;
   color: white;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #444;
+  color: white;
+  text-align: center;
 }
 
 .flex {
