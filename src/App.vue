@@ -46,6 +46,7 @@ body {
   text-align: center;
   font-size: 20px;
   color: white;
+  width: 100%;
 }
 
 .footer {

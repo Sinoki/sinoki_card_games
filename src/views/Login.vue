@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <div>Username</div>
+    <div class="username">Username</div>
     <input
       v-model="username"
       ref="usernameEl"
@@ -8,7 +8,7 @@
       @keyup="usernameHandler"
     />
 
-    <div>Password</div>
+    <div class="password">Password</div>
     <input
       v-model="password"
       ref="passwordEl"
@@ -17,10 +17,10 @@
     />
 
     <div>
-      <button @click="login">Login</button>
+      <button class="button" @click="login">Login</button>
     </div>
 
-    <div>
+    <div class="conta">
       Não tem conta? <router-link to="/signup">Cadastre-se aqui</router-link>
     </div>
     <div class="footer">2021 ♥ Desenvolvimento: Sinoki Card Games ®.</div>
@@ -82,10 +82,48 @@ export default defineComponent({
   height: 550px;
   margin-top: 20px;
   padding: 150px;
-  background: grey;
+  background: #444;
 }
 a {
   color: white;
+}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: lightcoral;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {
+  background-color: #615757;
+}
+
+.button:active {
+  background-color: #615757;
+  box-shadow: 0 5px #444;
+  transform: translateY(4px);
+}
+
+.username {
+  margin-top: -70px;
+}
+.password {
+  margin-top: 50px;
+}
+.button {
+  margin-top: 50px;
+  font-size: 20px;
+}
+.conta {
+  margin-top: 70px;
 }
 .footer {
   position: fixed;

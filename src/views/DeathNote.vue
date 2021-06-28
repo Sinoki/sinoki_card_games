@@ -6,7 +6,7 @@
 
 <style lang="scss" scoped>
 .deathNote {
-  margin-top: 25px;
+  margin-top: 35px;
   align-items: center;
   margin-left: auto;
   margin-right: auto;

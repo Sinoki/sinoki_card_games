@@ -13,11 +13,12 @@
 .about {
   font-family: "Ink Free";
   text-align: justify;
-  margin-top: 100px;
+  margin-top: 70px;
   margin-left: auto;
   margin-right: auto;
-  width: 700px;
+  width: 100%;
   color: grey;
   font-size: 25px;
+  cursor: pointer;
 }
 </style>

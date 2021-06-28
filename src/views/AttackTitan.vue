@@ -8,7 +8,7 @@
 
 <style lang="scss" scoped>
 .img {
-  margin-top: 50px;
+  margin-top: 100px;
 }
 .attackTitan {
   margin-top: 25px;

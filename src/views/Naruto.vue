@@ -6,7 +6,7 @@
 
 <style lang="scss" scoped>
 .naruto {
-  margin-top: 30px;
+  margin-top: 60px;
   align-items: center;
   margin-left: auto;
   margin-right: auto;

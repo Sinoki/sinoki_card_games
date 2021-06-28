@@ -2,12 +2,12 @@
   <div class="header">Olá, seja bem vindo a super loja de cards Pokemon</div>
 
   <div class="balance">
-    Balance: <strong>{{ balance }}</strong>
+    <img src="@/assets/balance.svg"/> Balance: <strong>{{ balance }}</strong>
   </div>
 
   <div class="cart">
     <router-link :to="{ name: 'Checkout' }">
-      Cart: <strong>{{ cartCount }}</strong>
+     <img src="@/assets/cart.svg"/> Cart: <strong>{{ cartCount }}</strong>
     </router-link>
   </div>
 
@@ -112,7 +112,6 @@ export default defineComponent({
   margin-bottom: 50px;
 }
 .header-card-container {
-  border: 1px solid yellow;
   display: flex;
   justify-content: center;
   margin-bottom: 30px;

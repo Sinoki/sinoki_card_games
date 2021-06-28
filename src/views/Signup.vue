@@ -1,9 +1,9 @@
 <template>
   <div class="signup">
-    <div>Name</div>
+    <div class="name">Name</div>
     <input v-model="name" type="text" @keyup="nameHandler" />
 
-    <div>Username</div>
+    <div class="username">Username</div>
     <input
       v-model="username"
       ref="usernameEl"
@@ -14,7 +14,7 @@
       {{ error.msg }}
     </div>
 
-    <div>Password</div>
+    <div class="password">Password</div>
     <input
       v-model="password1"
       ref="password1El"
@@ -22,7 +22,7 @@
       type="password"
     />
 
-    <div>Conf. Password</div>
+    <div class="conf">Conf. Password</div>
     <input
       v-model="password2"
       ref="password2El"
@@ -34,10 +34,12 @@
     </div>
 
     <div>
-      <button @click="signup">Signup</button>
+      <button class="button" @click="signup">Signup</button>
     </div>
 
-    <div>Ja tem conta? <router-link to="/login">Login</router-link></div>
+    <div class="conta">
+      Ja tem conta ? <router-link to="/login">Login</router-link>
+    </div>
   </div>
 </template>
 
@@ -134,9 +136,52 @@ export default defineComponent({
   height: 550px;
   margin-top: 20px;
   padding: 120px;
-  background: grey;
+  background: #444;
 }
 a {
   color: white;
+}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: lightcoral;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {
+  background-color: #615757;
+}
+
+.button:active {
+  background-color: #615757;
+  box-shadow: 0 5px #444;
+  transform: translateY(4px);
+}
+.name {
+  margin-top: -85px;
+}
+.username {
+  margin-top: 30px;
+}
+.password {
+  margin-top: 30px;
+}
+.conf {
+  margin-top: 30px;
+}
+.button {
+  margin-top: 30px;
+  font-size: 20px;
+}
+.conta {
+  margin-top: 40px;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="contact">
-    <h3>https://www.instagram.com/sinokivanessa/</h3>
+    <a href="https://www.instagram.com/sinokivanessa/">https://www.instagram.com/sinokivanessa/</a>
   </div>
   <div class="footer">2021 ♥ Desenvolvimento: Sinoki Card Games ®.</div>
 </template>
@@ -10,13 +10,19 @@
 <style lang="scss" scoped>
 .contact {
   font-family: "Ink Free";
-  text-align: center;
-  margin-top: 200px;
+  text-align: justify, center;
+  margin-top: 150px;
   margin-left: auto;
   margin-right: auto;
-  width: 700px;
-  color: grey;
   font-size: 25px;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: grey;
+}
+a:hover {
+  color: pink;
 }
 .footer {
   position: fixed;

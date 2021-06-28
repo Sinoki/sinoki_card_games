@@ -112,8 +112,7 @@ export default defineComponent({
   color: black;
   font-size: 30px;
   background: lightcoral;
-  display: flex;
-  justify-content: center;
+  width: 100%;
 }
 
 nav {

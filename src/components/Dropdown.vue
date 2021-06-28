@@ -45,10 +45,32 @@ nav .menu-item .sub-menu {
   left: 50%;
   transform: translateX(-50%);
   width: max-content;
+  height: 500px;
   border-radius: 10px;
+  overflow: auto;
   z-index: 1;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #615757;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.5s ease-out;

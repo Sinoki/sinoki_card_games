@@ -13,5 +13,9 @@
 .yu {
   width: 700px;
   height: 500px;
+  border-radius: 10px;
+}
+.yu:hover {
+  border: 3px solid yellow;
 }
 </style>

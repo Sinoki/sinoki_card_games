@@ -9,6 +9,7 @@ interface Sprite {
 export interface Card {
   id: number;
   name: string;
+  types: [];
   sprites: Sprite;
   price: number;
   abilities?: [];
@@ -24,7 +25,6 @@ export interface Card {
   pastTypes?: [];
   species?: Record<string, unknown>;
   stats?: [];
-  types?: [];
   weight?: number;
 }
 interface State {
@@ -56,6 +56,7 @@ const mutations = {
     const newCard: Card = {
       id: card.id,
       name: card.name,
+      types: card.types[0].type.name,
       price: card.price,
       sprites: {
         frontDefault: card.sprites.front_default,

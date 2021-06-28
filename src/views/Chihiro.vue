@@ -6,9 +6,10 @@
 
 <style lang="scss" scoped>
 .chihiro {
-  margin-top: 150px;
+  margin-top: 130px;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 10px;
 }
 </style>

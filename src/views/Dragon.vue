@@ -8,7 +8,7 @@
 .dragon {
   width: 100%;
   height: 50%;
-  margin-top: 70px;
+  margin-top: 90px;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
