@@ -1,41 +1,63 @@
 <template>
   <div class="saitama">
     <div class="container">
+      <div data-am-fadeshow="next-prev-navigation">
+        <input type="radio" name="css-fadeshow" id="slide-1" />
+        <input type="radio" name="css-fadeshow" id="slide-2" />
+        <input type="radio" name="css-fadeshow" id="slide-3" />
+        <input type="radio" name="css-fadeshow" id="slide-4" />
 
-	<div data-am-fadeshow="next-prev-navigation">
+        <div class="fs-slides">
+          <div
+            class="fs-slide"
+            style="
+              background-image: url(https://i.ibb.co/HXmS4HL/Saitama-e-Mosquito.jpg);
+            "
+          ></div>
+          <div
+            class="fs-slide"
+            style="
+              background-image: url(https://i.ibb.co/bJYJ10s/onepunchman.jpg);
+            "
+          ></div>
+          <div
+            class="fs-slide"
+            style="background-image: url(https://i.ibb.co/252kdCN/saitama.jpg)"
+          ></div>
+          <div
+            class="fs-slide"
+            style="
+              background-image: url(https://i.ibb.co/3mDGRsR/saitama-ok.jpg);
+            "
+          >
+            <div class="cards">
+              <a href="/CardsSaitama"><span class="btnCards">Cards</span></a>
+            </div>
+          </div>
+        </div>
 
-		<input type="radio" name="css-fadeshow" id="slide-1" />
-		<input type="radio" name="css-fadeshow" id="slide-2" />
-		<input type="radio" name="css-fadeshow" id="slide-3" />
+        <div class="fs-quick-nav">
+          <label class="fs-quick-btn" for="slide-1"></label>
+          <label class="fs-quick-btn" for="slide-2"></label>
+          <label class="fs-quick-btn" for="slide-3"></label>
+          <label class="fs-quick-btn" for="slide-4"></label>
+        </div>
 
-		<div class="fs-slides">
-			<div class="fs-slide" style="background-image: url(https://i.ibb.co/HXmS4HL/Saitama-e-Mosquito.jpg);">
-			</div>
-			<div class="fs-slide" style="background-image: url(https://i.ibb.co/bJYJ10s/onepunchman.jpg);"></div>
-			<div class="fs-slide" style="background-image: url(https://i.ibb.co/252kdCN/saitama.jpg);"></div>
-		</div>
+        <div class="fs-prev-nav">
+          <label class="fs-prev-btn" for="slide-1"></label>
+          <label class="fs-prev-btn" for="slide-2"></label>
+          <label class="fs-prev-btn" for="slide-3"></label>
+          <label class="fs-prev-btn" for="slide-4"></label>
+        </div>
 
-		<div class="fs-quick-nav">
-			<label class="fs-quick-btn" for="slide-1"></label>
-			<label class="fs-quick-btn" for="slide-2"></label>
-			<label class="fs-quick-btn" for="slide-3"></label>
-		</div>
-
-		<div class="fs-prev-nav">
-			<label class="fs-prev-btn" for="slide-1"></label>
-			<label class="fs-prev-btn" for="slide-2"></label>
-			<label class="fs-prev-btn" for="slide-3"></label>
-		</div>
-
-		<div class="fs-next-nav">
-			<label class="fs-next-btn" for="slide-1"></label>
-			<label class="fs-next-btn" for="slide-2"></label>
-			<label class="fs-next-btn" for="slide-3"></label>
-		</div>
-
-	</div>
-
-</div>
+        <div class="fs-next-nav">
+          <label class="fs-next-btn" for="slide-1"></label>
+          <label class="fs-next-btn" for="slide-2"></label>
+          <label class="fs-next-btn" for="slide-3"></label>
+          <label class="fs-next-btn" for="slide-4"></label>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -50,423 +72,457 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-$max-slides:					5;
-$prefix:							true;
-$responsive:					true;
-$breakpoint-small:			500px;
-$fade-time:						1;
-$prev-next-fontfamily:		sans-serif;
-$prev-next-icon-size:		3vw;
-$prev-next-icon-color:		rgba(255,255,255,0.5);
-$prev-next-bg:					rgba(255,255,255,0);
-$prev-next-bg-hover:			rgba(255,255,255,0.1);
-$prev-icon:						'❮';
-$next-icon:						'❯';
-$autohide-next-prev:			true;
-$quick-nav-color:				rgba(255,255,255,0.8);
-$quick-nav-active-color:	coral;
-$fade-color:					#fff;
-$autoplay:						true;
-$autoplay-duration:			5;
+$max-slides: 5;
+$prefix: true;
+$responsive: true;
+$breakpoint-small: 500px;
+$fade-time: 1;
+$prev-next-fontfamily: sans-serif;
+$prev-next-icon-size: 3vw;
+$prev-next-icon-color: rgba(255, 255, 255, 0.5);
+$prev-next-bg: rgba(255, 255, 255, 0);
+$prev-next-bg-hover: rgba(255, 255, 255, 0.1);
+$prev-icon: "❮";
+$next-icon: "❯";
+$autohide-next-prev: true;
+$quick-nav-color: rgba(255, 255, 255, 0.8);
+$quick-nav-active-color: coral;
+$fade-color: #fff;
+$autoplay: true;
+$autoplay-duration: 5;
 
 @mixin fadeshow-transition($value...) {
-	@if length($value) < 1 {
-		$value: all 150ms linear;
-	}
-	@if $prefix == true {
-		-webkit-transition: $value;
-	}
-				  transition: $value;
+  @if length($value) < 1 {
+    $value: all 150ms linear;
+  }
+  @if $prefix == true {
+    -webkit-transition: $value;
+  }
+  transition: $value;
 }
 
 @mixin fadeshow-transform($value...) {
-	@if length($value) < 1 {
-		$value: all 150ms linear;
-	}
-	@if $prefix == true {
-		-webkit-transform: $value;
-			 -ms-transform: $value;
-	}
-				  transform: $value;
+  @if length($value) < 1 {
+    $value: all 150ms linear;
+  }
+  @if $prefix == true {
+    -webkit-transform: $value;
+    -ms-transform: $value;
+  }
+  transform: $value;
 }
 
 @mixin fadeshow-animation($value...) {
-	@if $prefix == true {
-		-webkit-animation: $value;
-	}
-				  animation: $value;
+  @if $prefix == true {
+    -webkit-animation: $value;
+  }
+  animation: $value;
 }
 
 @mixin fadeshow-animation-delay($value) {
-	@if $prefix == true {
-		-webkit-animation-delay: $value;
-	}
-				  animation-delay: $value;
+  @if $prefix == true {
+    -webkit-animation-delay: $value;
+  }
+  animation-delay: $value;
 }
 
 @mixin fadeshow-unselectable() {
-	@if $prefix == true {
-		-webkit-user-select: none;
-		   -moz-user-select: none;
-			 -ms-user-select: none;
-	}
-				  user-select: none;
+  @if $prefix == true {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  user-select: none;
 }
 
 @mixin quickNavBtnActive() {
-	background-color: $quick-nav-active-color;
+  background-color: $quick-nav-active-color;
 }
 
 @mixin quickNavBtnInactive() {
-	background-color: $quick-nav-color;
+  background-color: $quick-nav-color;
 }
 
 [data-am-fadeshow] {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	background-color: $fade-color;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: $fade-color;
 
-	.fs-slide {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		opacity: 0;
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		@include fadeshow-transition(opacity #{$fade-time}s ease);
+  .fs-slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include fadeshow-transition(opacity #{$fade-time}s ease);
 
-		&:first-child {
-			opacity: 1;
-		}
-	}
+    &:first-child {
+      opacity: 1;
+    }
+  }
 
-	.fs-quick-nav {
-		position: absolute;
-		bottom: 45px;
-		left: 50%;
-		z-index: 1;
-		@include fadeshow-unselectable();
-		@include fadeshow-transform(translateX(-50%));
-	}
+  .fs-quick-nav {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    z-index: 1;
+    @include fadeshow-unselectable();
+    @include fadeshow-transform(translateX(-50%));
+  }
 
-	.fs-quick-btn {
-		display: inline-block;
-		width: 15px;
-		height: 15px;
-		margin: 0 2px;
-		border-radius: 50%;
-		cursor: pointer;
-		@include fadeshow-transition(opacity 200ms ease);
-		@include quickNavBtnInactive();
+  .fs-quick-btn {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 2px;
+    border-radius: 50%;
+    cursor: pointer;
+    @include fadeshow-transition(opacity 200ms ease);
+    @include quickNavBtnInactive();
 
-		&:hover {
-			opacity: 0.8;
-		}
+    &:hover {
+      opacity: 0.8;
+    }
 
-		&:first-child {
-			@include quickNavBtnActive();
-		}
-	}
+    &:first-child {
+      @include quickNavBtnActive();
+    }
+  }
 
-	%prev-next {
-		position: absolute;
-		display: none;
-		top: 0;
-		bottom: 0;
-		width: 100px;
-		cursor: pointer;
-		font-family: $prev-next-fontfamily;
-		background-color: $prev-next-bg;
-		-webkit-tap-highlight-color: rgba(0,0,0,0);
-		@include fadeshow-transition(all 200ms ease);
+  %prev-next {
+    position: absolute;
+    display: none;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    cursor: pointer;
+    font-family: $prev-next-fontfamily;
+    background-color: $prev-next-bg;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    @include fadeshow-transition(all 200ms ease);
 
-		@if $responsive == true {
-			@media (max-width: $breakpoint-small) {
-				width: 50%;
-			}
-		}
+    @if $responsive == true {
+      @media (max-width: $breakpoint-small) {
+        width: 50%;
+      }
+    }
 
-		&:before {
-			position: absolute;
-			top: 50%;
-			font-size: $prev-next-icon-size;
-			color: $prev-next-icon-color;
-		}
+    &:before {
+      position: absolute;
+      top: 50%;
+      font-size: $prev-next-icon-size;
+      color: $prev-next-icon-color;
+    }
 
-		&:hover {
-			background-color: $prev-next-bg-hover;
-			@if $responsive == true {
-				@media (max-width: $breakpoint-small) {
-					background-color: rgba(255,255,255,0);
-				}
-			}
-		}
-	}
+    &:hover {
+      background-color: $prev-next-bg-hover;
+      @if $responsive == true {
+        @media (max-width: $breakpoint-small) {
+          background-color: rgba(255, 255, 255, 0);
+        }
+      }
+    }
+  }
 
-	.fs-prev-btn {
-		@extend %prev-next;
-		left: 0;
+  .fs-prev-btn {
+    @extend %prev-next;
+    left: 0;
 
-		&:before {
-			content: "#{$prev-icon}";
-			left: 50%;
-			@include fadeshow-transform(translate(-50%, -50%));
-			@if $responsive == true {
-				@media (max-width: $breakpoint-small) {
-					left: 30px;
-				}
-			}
-		}
+    &:before {
+      content: "#{$prev-icon}";
+      left: 50%;
+      @include fadeshow-transform(translate(-50%, -50%));
+      @if $responsive == true {
+        @media (max-width: $breakpoint-small) {
+          left: 30px;
+        }
+      }
+    }
 
-		@if $autohide-next-prev == true {
-			@include fadeshow-transform(translateX(-100%));
-			@if $responsive == true {
-				@media (max-width: $breakpoint-small) {
-					@include fadeshow-transform(translate(0));
-				}
-			}
-		}
-	}
+    @if $autohide-next-prev == true {
+      @include fadeshow-transform(translateX(-100%));
+      @if $responsive == true {
+        @media (max-width: $breakpoint-small) {
+          @include fadeshow-transform(translate(0));
+        }
+      }
+    }
+  }
 
-	.fs-next-btn {
-		@extend %prev-next;
-		right: 0;
+  .fs-next-btn {
+    @extend %prev-next;
+    right: 0;
 
-		&:before {
-			content: "#{$next-icon}";
-			right: 50%;
-			@include fadeshow-transform(translate(50%, -50%));
-			@if $responsive == true {
-				@media (max-width: $breakpoint-small) {
-					right: 30px;
-				}
-			}
-		}
+    &:before {
+      content: "#{$next-icon}";
+      right: 50%;
+      @include fadeshow-transform(translate(50%, -50%));
+      @if $responsive == true {
+        @media (max-width: $breakpoint-small) {
+          right: 30px;
+        }
+      }
+    }
 
-		@if $autohide-next-prev == true {
-			@include fadeshow-transform(translateX(100%));
-			@if $responsive == true {
-				@media (max-width: $breakpoint-small) {
-					@include fadeshow-transform(translate(0));
-				}
-			}
-		}
-	}
+    @if $autohide-next-prev == true {
+      @include fadeshow-transform(translateX(100%));
+      @if $responsive == true {
+        @media (max-width: $breakpoint-small) {
+          @include fadeshow-transform(translate(0));
+        }
+      }
+    }
+  }
 
-	input[type="radio"] {
-		position: fixed;
-		top: -9999px;
+  input[type="radio"] {
+    position: fixed;
+    top: -9999px;
 
-		&:checked {
+    &:checked {
+      $i: $max-slides;
 
-			$i: $max-slides;
+      @while $i > 0 {
+        &:nth-of-type(#{$i}) {
+          ~ .fs-slides {
+            .fs-slide {
+              opacity: 0;
+              @include fadeshow-animation(none !important);
+            }
+            .fs-slide:nth-child(#{$i}) {
+              opacity: 1;
+            }
+          }
 
-			@while $i > 0 {
+          ~ .fs-quick-nav {
+            .fs-quick-btn {
+              @include quickNavBtnInactive();
 
-				&:nth-of-type(#{$i}) {
+              @include fadeshow-animation(none !important);
+            }
+            .fs-quick-btn:nth-child(#{$i}) {
+              background-color: $quick-nav-active-color;
+              &:hover {
+                opacity: 1;
+              }
+            }
+          }
+        }
+        $i: $i - 1;
+      }
 
-					~ .fs-slides {
-						.fs-slide {
+      &:first-of-type:last-of-type {
+        ~ .fs-quick-nav,
+        ~ .fs-prev-nav,
+        ~ .fs-next-nav {
+          display: none !important;
+        }
+      }
+    }
+  }
 
-							opacity: 0;
-							@include fadeshow-animation(none !important);
-						}
-						.fs-slide:nth-child(#{$i}) {
-							opacity: 1;
-						}
-					}
-
-					~ .fs-quick-nav {
-						.fs-quick-btn {
-							@include quickNavBtnInactive();
-
-							@include fadeshow-animation(none !important);
-						}
-						.fs-quick-btn:nth-child(#{$i}) {
-							background-color: $quick-nav-active-color;
-							&:hover {
-								opacity: 1;
-							}
-						}
-					}
-
-				}
-				$i: $i - 1;
-			}
-
-			&:first-of-type:last-of-type {
-				~ .fs-quick-nav,
-				~ .fs-prev-nav,
-				~ .fs-next-nav {
-					display: none !important;
-				}
-			}
-
-		}
-	}
-
-	@if $autohide-next-prev == true {
-		&:hover {
-			.fs-prev-btn,
-			.fs-next-btn {
-				@include fadeshow-transform(translateX(0));
-			}
-		}
-	}
-
+  @if $autohide-next-prev == true {
+    &:hover {
+      .fs-prev-btn,
+      .fs-next-btn {
+        @include fadeshow-transform(translateX(0));
+      }
+    }
+  }
 }
 
 [data-am-fadeshow~="next-prev-navigation"] {
-	input[type="radio"] {
+  input[type="radio"] {
+    &:checked {
+      $i: $max-slides;
 
-		&:checked {
+      @while $i > 0 {
+        &:nth-of-type(#{$i}) {
+          $prev: ($i - 1);
+          $next: ($i + 1);
 
-			$i: $max-slides;
+          @if $prev > 0 {
+            ~ .fs-prev-nav {
+              .fs-prev-btn {
+                display: none;
+              }
+              .fs-prev-btn:nth-child(#{$prev}) {
+                display: block;
+              }
+            }
+          }
 
-			@while $i > 0 {
+          @if $next < ($max-slides + 1) {
+            ~ .fs-next-nav {
+              .fs-next-btn {
+                display: none;
+              }
+              .fs-next-btn:nth-child(#{$next}) {
+                display: block;
+              }
+            }
+          }
 
-				&:nth-of-type(#{$i}) {
+          &:first-of-type {
+            ~ .fs-prev-nav {
+              .fs-prev-btn:last-child {
+                display: block;
+              }
+            }
+          }
 
-					$prev: ($i - 1);
-					$next: ($i + 1);
+          &:last-of-type {
+            ~ .fs-next-nav {
+              .fs-next-btn:first-child {
+                display: block;
+              }
+            }
+          }
+        }
+        $i: $i - 1;
+      }
+    }
+  }
 
-					@if $prev > 0 {
-						~ .fs-prev-nav {
-							.fs-prev-btn {
-								display: none;
-							}
-							.fs-prev-btn:nth-child(#{$prev}) {
-								display: block;
-							}
-						}
-					}
+  .fs-prev-btn:last-child {
+    display: block;
+  }
 
-					@if $next < ($max-slides + 1) {
-						~ .fs-next-nav {
-							.fs-next-btn {
-								display: none;
-							}
-							.fs-next-btn:nth-child(#{$next}) {
-								display: block;
-							}
-						}
-					}
-
-					&:first-of-type {
-						~ .fs-prev-nav {
-							.fs-prev-btn:last-child {
-								display: block;
-							}
-						}
-					}
-
-					&:last-of-type {
-						~ .fs-next-nav {
-							.fs-next-btn:first-child {
-								display: block;
-							}
-						}
-					}
-
-				}
-			  $i: $i - 1;
-			}
-		}
-	}
-
-	.fs-prev-btn:last-child {
-		display: block;
-	}
-
-	.fs-next-btn:nth-child(2) {
-		display: block
-	}
-
+  .fs-next-btn:nth-child(2) {
+    display: block;
+  }
 }
 
 @if $autoplay == true {
+  $i: $max-slides;
 
-	$i: $max-slides;
+  @while $i > 1 {
+    $total-duration: $autoplay-duration * $i;
 
-	@while $i > 1 {
+    @keyframes quickNavAnimation-#{$i} {
+      0% {
+        @include quickNavBtnInactive();
+      }
+      #{100% * $fade-time / $total-duration},
+      #{100% * $autoplay-duration / $total-duration} {
+        @include quickNavBtnActive();
+      }
+      #{100% * ($autoplay-duration + $fade-time) / $total-duration},
+      100% {
+        @include quickNavBtnInactive();
+      }
+    }
+    @if $prefix == true {
+      @-webkit-keyframes quickNavAnimation-#{$i} {
+        0% {
+          @include quickNavBtnInactive();
+        }
+        #{100% * $fade-time / $total-duration},
+        #{100% * $autoplay-duration / $total-duration} {
+          @include quickNavBtnActive();
+        }
+        #{100% * ($autoplay-duration + $fade-time) / $total-duration},
+        100% {
+          @include quickNavBtnInactive();
+        }
+      }
+    }
 
-		$total-duration: $autoplay-duration * $i;
+    @keyframes slidesAnimation-#{$i} {
+      0% {
+        opacity: 0;
+      }
+      #{100% * $fade-time / $total-duration},
+      #{100% * $autoplay-duration / $total-duration} {
+        opacity: 1;
+      }
+      #{100% * ($autoplay-duration + $fade-time) / $total-duration},
+      100% {
+        opacity: 0;
+      }
+    }
+    @if $prefix == true {
+      @-webkit-keyframes slidesAnimation-#{$i} {
+        0% {
+          opacity: 0;
+        }
+        #{100% * $fade-time / $total-duration},
+        #{100% * $autoplay-duration / $total-duration} {
+          opacity: 1;
+        }
+        #{100% * ($autoplay-duration + $fade-time) / $total-duration},
+        100% {
+          opacity: 0;
+        }
+      }
+    }
 
-		@keyframes quickNavAnimation-#{$i} {
-			0% { @include quickNavBtnInactive();  }
-			#{100% * $fade-time / $total-duration},
-			#{100% * $autoplay-duration / $total-duration} { @include quickNavBtnActive(); }
-			#{100% * ($autoplay-duration + $fade-time) / $total-duration},
-			100% { @include quickNavBtnInactive(); }
-		}
-		@if $prefix == true {
-			@-webkit-keyframes quickNavAnimation-#{$i} {
-				0% { @include quickNavBtnInactive();  }
-				#{100% * $fade-time / $total-duration},
-				#{100% * $autoplay-duration / $total-duration} { @include quickNavBtnActive(); }
-				#{100% * ($autoplay-duration + $fade-time) / $total-duration},
-				100% { @include quickNavBtnInactive(); }
-			}
-		}
+    [data-am-fadeshow~="autoplay"] {
+      input[type="radio"]:nth-of-type(#{$i}):last-of-type {
+        ~ .fs-slides {
+          .fs-slide {
+            @include fadeshow-animation(
+              slidesAnimation-#{$i} #{$total-duration}s infinite
+            );
+          }
+        }
 
-		@keyframes slidesAnimation-#{$i} {
-			0% { opacity: 0; }
-			#{100% * $fade-time / $total-duration},
-			#{100% * $autoplay-duration / $total-duration} { opacity: 1; }
-			#{100% * ($autoplay-duration + $fade-time) / $total-duration},
-			100% { opacity: 0; }
-		}
-		@if $prefix == true {
-			@-webkit-keyframes slidesAnimation-#{$i} {
-				0% { opacity: 0; }
-				#{100% * $fade-time / $total-duration},
-				#{100% * $autoplay-duration / $total-duration} { opacity: 1; }
-				#{100% * ($autoplay-duration + $fade-time) / $total-duration},
-				100% { opacity: 0; }
-			}
-		}
+        ~ .fs-quick-nav {
+          .fs-quick-btn {
+            @include fadeshow-animation(
+              quickNavAnimation-#{$i} #{$total-duration}s infinite
+            );
+          }
+        }
 
-		[data-am-fadeshow~="autoplay"] {
-			input[type="radio"]:nth-of-type(#{$i}):last-of-type {
-
-				~ .fs-slides {
-					.fs-slide {
-						@include fadeshow-animation(slidesAnimation-#{$i} #{$total-duration}s infinite);
-					}
-				}
-
-				~ .fs-quick-nav {
-					.fs-quick-btn {
-						@include fadeshow-animation(quickNavAnimation-#{$i} #{$total-duration}s infinite);
-					}
-				}
-
-				@for $j from 1 through $i {
-					~ .fs-slides .fs-slide:nth-child(#{$j}),
-					~ .fs-quick-nav .fs-quick-btn:nth-child(#{$j}) {
-						$animation-delay: #{($j - 1) * ($autoplay-duration) - $fade-time}s;
-						@include fadeshow-animation-delay(#{$animation-delay});
-					}
-				}
-
-			}
-			$i: $i - 1;
-		}
-	}
+        @for $j from 1 through $i {
+          ~ .fs-slides .fs-slide:nth-child(#{$j}),
+          ~ .fs-quick-nav .fs-quick-btn:nth-child(#{$j}) {
+            $animation-delay: #{($j - 1) * ($autoplay-duration) - $fade-time}s;
+            @include fadeshow-animation-delay(#{$animation-delay});
+          }
+        }
+      }
+      $i: $i - 1;
+    }
+  }
 }
 
 .container {
-	position: absolute;
-	top: 100px;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	box-shadow: 0 0 20px rgba(0,0,0,0.1);
-	overflow: hidden;
+  position: absolute;
+  top: 100px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.cards {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  color: rgba(0, 0, 0, 0.5);
+  font-family: sans-serif;
+  text-align: center;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.btnCards {
+  margin-top: 0;
+  font-size: 3vw;
+  font-weight: bold;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 2px solid #78bb51;
+  cursor: pointer;
+  color: grey;
+}
+.btnCards:hover {
+  color: #1c1c1c;
 }
 </style>

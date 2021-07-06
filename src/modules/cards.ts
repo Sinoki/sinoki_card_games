@@ -92,7 +92,7 @@ const actions = {
   async loadCards() {
     mutations.setBusy(true);
 
-    const res = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=5&offset=0');
+    const res = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=800&offset=0');
 
     mutations.setNextUrl(res.data.next);
 

@@ -16,6 +16,7 @@ import Login from '../views/Login.vue';
 import Contact from '../views/Contact.vue';
 import Signup from '../views/Signup.vue';
 import Checkout from '../views/Checkout.vue';
+import CardsSaitama from '../views/CardsSaitama.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -110,6 +111,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/contact',
     name: 'Contact',
     component: Contact,
+  },
+  {
+    path: '/cardsSaitama',
+    name: 'CardsSaitama',
+    component: CardsSaitama,
   },
 
 ];

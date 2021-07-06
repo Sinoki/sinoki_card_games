@@ -1,13 +1,17 @@
 <template>
   <div>
     <div class="header-card-container flex flex-wrap">
-    <div class="flex-flex-wrap">
-      <div v-for="card in cart" :key="card.id">
-        <card-component :card="card" isCart @on-remove="removeHandler(card)" />
-      </div>
+      <div class="flex-flex-wrap">
+        <div v-for="card in cart" :key="card.id">
+          <card-component
+            :card="card"
+            isCart
+            @on-remove="removeHandler(card)"
+          />
+        </div>
 
-      <div v-if="!cart.length">Seu carrinho esta vazio</div>
-    </div>
+        <div v-if="!cart.length">Seu carrinho esta vazio</div>
+      </div>
     </div>
 
     <div class="checkout-footer">
@@ -60,17 +64,16 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
- .header-card-container {
-  border: 1px solid yellow;
+.header-card-container {
   display: flex;
   justify-content: center;
   max-height: 50vh;
   overflow-y: auto;
-    align-items: center;
+  align-items: center;
 }
 .flex-flex-wrap {
-    display: flex;
- justify-content: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
   margin-left: 12px;
   margin-top: 70px;
@@ -81,7 +84,7 @@ export default defineComponent({
 }
 .btnFinalizarBuy {
   display: flex;
- justify-content: center;
+  justify-content: center;
   align-items: center;
   margin-left: 650px;
 }
