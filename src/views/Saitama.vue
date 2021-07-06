@@ -30,9 +30,6 @@
               background-image: url(https://i.ibb.co/3mDGRsR/saitama-ok.jpg);
             "
           >
-            <div class="cards">
-              <a href="/CardsSaitama"><span class="btnCards">Cards</span></a>
-            </div>
           </div>
         </div>
 

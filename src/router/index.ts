@@ -112,12 +112,6 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Contact',
     component: Contact,
   },
-  {
-    path: '/cardsSaitama',
-    name: 'CardsSaitama',
-    component: CardsSaitama,
-  },
-
 ];
 
 const router = createRouter({
