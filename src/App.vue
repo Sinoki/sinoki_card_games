@@ -1,7 +1,9 @@
 <template>
   <Navbar />
+
   <router-view />
-     <div class="footer">2021 ♥ Desenvolvimento: Sinoki Card Games ®.</div>
+
+  <div class="footer">2021 ♥ Desenvolvimento: Sinoki Card Games ®.</div>
 </template>
 
 <script lang="ts">

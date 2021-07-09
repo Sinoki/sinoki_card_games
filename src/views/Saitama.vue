@@ -6,6 +6,8 @@
         <input type="radio" name="css-fadeshow" id="slide-2" />
         <input type="radio" name="css-fadeshow" id="slide-3" />
         <input type="radio" name="css-fadeshow" id="slide-4" />
+        <input type="radio" name="css-fadeshow" id="slide-5" />
+        <input type="radio" name="css-fadeshow" id="slide-6" />
 
         <div class="fs-slides">
           <div
@@ -17,12 +19,22 @@
           <div
             class="fs-slide"
             style="
+              background-image: url(https://i.ibb.co/xz3hz06/One-Punch-Man.jpg);
+            "
+          ></div>
+          <div
+            class="fs-slide"
+            style="
               background-image: url(https://i.ibb.co/bJYJ10s/onepunchman.jpg);
             "
           ></div>
           <div
             class="fs-slide"
-            style="background-image: url(https://i.ibb.co/252kdCN/saitama.jpg)"
+            style="background-image: url(https://i.ibb.co/VLPVmp4/saitama-mug.jpg)"
+          ></div>
+          <div
+            class="fs-slide"
+            style="background-image: url(https://i.ibb.co/fQT1YYX/Saitama.jpg)"
           ></div>
           <div
             class="fs-slide"
@@ -30,6 +42,11 @@
               background-image: url(https://i.ibb.co/3mDGRsR/saitama-ok.jpg);
             "
           >
+            <div class="cards">
+              <router-link to="CardsSaitama">
+                <span class="btnCards">Cards</span>
+              </router-link>
+            </div>
           </div>
         </div>
 
@@ -38,6 +55,8 @@
           <label class="fs-quick-btn" for="slide-2"></label>
           <label class="fs-quick-btn" for="slide-3"></label>
           <label class="fs-quick-btn" for="slide-4"></label>
+          <label class="fs-quick-btn" for="slide-5"></label>
+          <label class="fs-quick-btn" for="slide-6"></label>
         </div>
 
         <div class="fs-prev-nav">
@@ -45,6 +64,8 @@
           <label class="fs-prev-btn" for="slide-2"></label>
           <label class="fs-prev-btn" for="slide-3"></label>
           <label class="fs-prev-btn" for="slide-4"></label>
+          <label class="fs-prev-btn" for="slide-5"></label>
+          <label class="fs-prev-btn" for="slide-6"></label>
         </div>
 
         <div class="fs-next-nav">
@@ -52,6 +73,8 @@
           <label class="fs-next-btn" for="slide-2"></label>
           <label class="fs-next-btn" for="slide-3"></label>
           <label class="fs-next-btn" for="slide-4"></label>
+          <label class="fs-next-btn" for="slide-5"></label>
+          <label class="fs-next-btn" for="slide-6"></label>
         </div>
       </div>
     </div>
@@ -69,7 +92,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-$max-slides: 5;
+$max-slides: 7;
 $prefix: true;
 $responsive: true;
 $breakpoint-small: 500px;

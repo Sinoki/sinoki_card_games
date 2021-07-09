@@ -1,9 +1,12 @@
 <template>
   <div class="title">Sinoki Card Games</div>
+
   <nav>
     <div class="menu-item"><router-link to="/">Home</router-link></div>
     <div class="menu-item"><router-link to="/about">About</router-link></div>
+
     <Dropdown title="Games" :items="games" />
+
     <div class="menu-item">
       <span v-if="!isLoggedIn">
         <router-link to="/login">Login</router-link>
@@ -14,6 +17,7 @@
         <span @click="logoutHandler">Logout</span>
       </span>
     </div>
+
     <div class="menu-item">
       <router-link to="/contact">Contact</router-link>
     </div>
@@ -90,12 +94,20 @@ export default defineComponent({
           link: 'Chihiro',
         },
         {
+          title: 'Meu amigo Totoro',
+          link: 'Totoro',
+        },
+        {
           title: 'Hatsune Miku',
           link: 'Miku',
         },
         {
           title: 'Avatar: A lenda de Aang',
           link: 'Avatar',
+        },
+        {
+          title: 'Jibaku-kun: Bucky',
+          link: 'Bucky',
         },
       ],
     };

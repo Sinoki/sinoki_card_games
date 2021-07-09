@@ -10,19 +10,27 @@ import Dragon from '../views/Dragon.vue';
 import OnePiece from '../views/OnePiece.vue';
 import AttackTitan from '../views/AttackTitan.vue';
 import Chihiro from '../views/Chihiro.vue';
+import Totoro from '../views/Totoro.vue';
 import Miku from '../views/Miku.vue';
 import Avatar from '../views/Avatar.vue';
+import Bucky from '../views/Bucky.vue';
 import Login from '../views/Login.vue';
 import Contact from '../views/Contact.vue';
 import Signup from '../views/Signup.vue';
 import Checkout from '../views/Checkout.vue';
 import CardsSaitama from '../views/CardsSaitama.vue';
+import Cart from '../views/Cart.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
     component: Home,
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: Cart,
   },
   {
     path: '/saitama',
@@ -70,6 +78,11 @@ const routes: Array<RouteRecordRaw> = [
     component: Chihiro,
   },
   {
+    path: '/totoro',
+    name: 'Totoro',
+    component: Totoro,
+  },
+  {
     path: '/miku',
     name: 'Miku',
     component: Miku,
@@ -78,6 +91,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/avatar',
     name: 'Avatar',
     component: Avatar,
+  },
+  {
+    path: '/bucky',
+    name: 'Bucky',
+    component: Bucky,
   },
   {
     path: '/checkout',
@@ -112,6 +130,17 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Contact',
     component: Contact,
   },
+  {
+    path: '/cardsSaitama',
+    name: 'CardsSaitama',
+    component: CardsSaitama,
+  },
+  {
+    path: '/products',
+    name: 'Products',
+    component: CardsSaitama,
+  },
+
 ];
 
 const router = createRouter({
