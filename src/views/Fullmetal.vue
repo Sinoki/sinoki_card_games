@@ -1,13 +1,13 @@
 <template>
-  <div class="miku">
+  <div class="Fullmetal">
     <div ref="car" style="width: 700px"></div>
   </div>
 </template>
 
 <script>
 import { defineComponent, onMounted, ref } from 'vue';
-import Miku from '@/util/miku';
-import '@/util/miku/css.css';
+import Fullmetal from '@/util/fullmetal';
+import '@/util/fullmetal/css.css';
 
 export default defineComponent({
   setup() {
@@ -16,12 +16,12 @@ export default defineComponent({
       const options = {
         el: car.value,
         images: [
-          'https://i.ibb.co/tbBDv1Q/hatsune-miku.jpg',
-          'https://i.ibb.co/mGzhqTq/miku-hatsune.png',
-          'https://i.ibb.co/DKLdBrX/hatsune.jpg',
+          'https://i.ibb.co/DgzTz5z/Full-Metal-Alchemist.png',
+          'https://i.ibb.co/DgBSskN/fullmetal.png',
+          'https://i.ibb.co/q7cZG0n/fullmetal-alchemist.jpg',
         ],
       };
-      const miku = new Miku(options);
+      const fullmetal = new Fullmetal(options);
     });
     return {
       car,

@@ -1,4 +1,4 @@
-export default class miku {
+export default class fullmetal {
   constructor(obj) {
     this._els = [];
     this._dots = [];
@@ -9,7 +9,7 @@ export default class miku {
     this._dotsContainer = document.createElement('div');
     this._svgIcons();
 
-    this._imgContainer.classList.add('__miku-img-container');
+    this._imgContainer.classList.add('__fullmetal-img-container');
 
     if (obj.images) {
       this.images = obj.images;
@@ -17,7 +17,7 @@ export default class miku {
 
     if (obj.el) {
       this.el = obj.el;
-      this.el.classList.add('__miku-container');
+      this.el.classList.add('__fullmetal-container');
     }
 
     if (obj.el && obj.images && obj.images.length) {
@@ -49,7 +49,7 @@ export default class miku {
   createImgElement(idx, imgUrl) {
     const el = document.createElement('img');
     el.src = imgUrl;
-    el.classList.add('__miku-img');
+    el.classList.add('__fullmetal-img');
     el.style.display = 'none';
 
     const existsIndex = this._els.findIndex((x) => x === imgUrl);
@@ -72,7 +72,7 @@ export default class miku {
 
   createElements() {
     this._moveLeft.appendChild(this._chevronLeft);
-    this._moveLeft.classList.add('__miku-move-left');
+    this._moveLeft.classList.add('__fullmetal-move-left');
     this._moveLeft.onclick = () => {
       this._current--;
 
@@ -84,7 +84,7 @@ export default class miku {
     };
 
     this._moveRight.appendChild(this._chevronRight);
-    this._moveRight.classList.add('__miku-move-right');
+    this._moveRight.classList.add('__fullmetal-move-right');
     this._moveRight.onclick = () => {
       this._current++;
 

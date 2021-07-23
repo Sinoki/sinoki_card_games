@@ -9,11 +9,11 @@ import DeathNote from '../views/DeathNote.vue';
 import Dragon from '../views/Dragon.vue';
 import OnePiece from '../views/OnePiece.vue';
 import AttackTitan from '../views/AttackTitan.vue';
+import Fullmetal from '../views/Fullmetal.vue';
+import Bucky from '../views/Bucky.vue';
 import Chihiro from '../views/Chihiro.vue';
 import Totoro from '../views/Totoro.vue';
-import Miku from '../views/Miku.vue';
 import Avatar from '../views/Avatar.vue';
-import Bucky from '../views/Bucky.vue';
 import Login from '../views/Login.vue';
 import Contact from '../views/Contact.vue';
 import Signup from '../views/Signup.vue';
@@ -73,6 +73,16 @@ const routes: Array<RouteRecordRaw> = [
     component: AttackTitan,
   },
   {
+    path: '/fullmetal',
+    name: 'Fullmetal',
+    component: Fullmetal,
+  },
+  {
+    path: '/bucky',
+    name: 'Bucky',
+    component: Bucky,
+  },
+  {
     path: '/chihiro',
     name: 'Chihiro',
     component: Chihiro,
@@ -83,19 +93,9 @@ const routes: Array<RouteRecordRaw> = [
     component: Totoro,
   },
   {
-    path: '/miku',
-    name: 'Miku',
-    component: Miku,
-  },
-  {
     path: '/avatar',
     name: 'Avatar',
     component: Avatar,
-  },
-  {
-    path: '/bucky',
-    name: 'Bucky',
-    component: Bucky,
   },
   {
     path: '/checkout',
@@ -139,6 +139,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/products',
     name: 'Products',
     component: CardsSaitama,
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: Cart,
   },
 
 ];

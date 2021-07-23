@@ -5,26 +5,37 @@
        <button class="cart"><router-link to="cart">View cart</router-link></button>
     </header>
     <h1>Your Cart</h1>
-    <div class="products">
-      <div v-for="(product, index) in cart" :key="index">
-        <h3>{{product.name}}</h3>
-        <img :src="product.image" />
-        <div>{{product.cost}}</div>
-        <button v-on:click="removeItemFromCart(product)">Remove from cart</button>
+    <div class="cards">
+      <div v-for="(card, index) in cart" :key="index">
+        <h3>{{card.name}}</h3>
+        <img :src="card.image" />
+        <div>{{card.price}}</div>
+        <button @click="removeItemFromCart(card)">Remove from cart</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  props: ['cart'],
-  methods: {
-    removeItemFromCart(product) {
-      this.$emit('removeItemFromCart', product);
-    },
+import { defineComponent, computed } from 'vue';
+import useSaitama from '@/modules/saitama';
+
+export default defineComponent({
+  setup() {
+    const saitama = useSaitama();
+
+    const cart = computed(() => saitama.state.cart);
+
+    const removeItemFromCart = (card) => {
+      console.log('remover card', card);
+    };
+
+    return {
+      cart,
+      removeItemFromCart,
+    };
   },
-};
+});
 </script>
 
 <style scoped>
@@ -49,7 +60,7 @@ button a {
 a:link {
   text-decoration: none;
 }
-button .products {
+button .cards {
   margin-right: 10px;
 }
 .cards {

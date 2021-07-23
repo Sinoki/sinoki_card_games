@@ -90,6 +90,14 @@ export default defineComponent({
           link: 'AttackTitan',
         },
         {
+          title: 'Fullmetal Alchemist',
+          link: 'Fullmetal',
+        },
+        {
+          title: 'Jibaku-kun: Bucky',
+          link: 'Bucky',
+        },
+        {
           title: 'A viagem de Chihiro',
           link: 'Chihiro',
         },
@@ -98,16 +106,8 @@ export default defineComponent({
           link: 'Totoro',
         },
         {
-          title: 'Hatsune Miku',
-          link: 'Miku',
-        },
-        {
           title: 'Avatar: A lenda de Aang',
           link: 'Avatar',
-        },
-        {
-          title: 'Jibaku-kun: Bucky',
-          link: 'Bucky',
         },
       ],
     };
